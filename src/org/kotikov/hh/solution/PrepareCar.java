@@ -31,9 +31,14 @@ public PrepareCar(String carName) throws Exception {
 	public Travel createTravel() {
 		//Можно тут сделать предварительные вычисления с машиной
 			
-		return  new Travel(aCar);	 //Я решил передавать тип машины дальше потому, что
-									 //точно не известно как пойдут вычисления, вдруг есть сервис
-									 //который работает в зависимости от машины для каждого отеля например 
+		
+		return  new Travel(
+				aCar.amortization(),
+				aCar.repair(),
+				aCar.getClass().getSimpleName());	  
+									 
+		
+		 
 	}
 
 }
